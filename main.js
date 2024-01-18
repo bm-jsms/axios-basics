@@ -22,11 +22,13 @@ function postUsers() {
 	// 		password: 'pistol',
 	// 	},
 	// })
+
+	const data = {
+		email: 'eve.holt@reqres.in',
+		password: 'pistol',
+	};
 	axios
-		.post('https://reqres.in/api/register', {
-			email: 'eve.holt@reqres.in',
-			password: 'pistol',
-		})
+		.post('https://reqres.in/api/register', data)
 		.then(res => {
 			console.log(res.data);
 		})
