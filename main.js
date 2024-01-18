@@ -104,13 +104,17 @@ async function main() {
 
 	// console.log(resUsers.data, postUsers.data);
 
-	Promise.all([axios.get(usersUrl), axios.get(postsUrl)])
+	/* Promise.all([axios.get(usersUrl), axios.get(postsUrl)])
 		.then(([resUsers, postUsers]) => {
 			console.log(resUsers.data, postUsers.data);
 		})
 		.catch(err => {
 			console.log(err);
-		});
+		}); */
+
+	const res = await Promise.all([axios.get(usersUrl), axios.get(postsUrl)]);
+
+	console.log(res);
 }
 
 main();
