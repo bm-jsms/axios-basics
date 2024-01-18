@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 function getUsers() {
 	axios
 		.get('https://jsonplaceholder.typicode.com/users', {
