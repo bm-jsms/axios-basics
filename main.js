@@ -1,9 +1,8 @@
 function getUsers() {
-	axios({
-		url: 'https://jsonplaceholder.typicode.com/users',
+	axios('https://jsonplaceholder.typicode.com/users', {
 		method: 'GET',
 		params: {
-			_limit: 5,
+			_limit: 3,
 		},
 	})
 		.then(res => {
