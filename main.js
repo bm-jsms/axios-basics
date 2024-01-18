@@ -93,4 +93,16 @@ function deleteData() {
 		});
 }
 
-deleteData();
+// concurrent request
+
+async function main() {
+	const usersUrl = 'https://jsonplaceholder.typicode.com/users';
+	const postsUrl = 'https://jsonplaceholder.typicode.com/posts';
+
+	const resUsers = await axios.get(usersUrl);
+	const postUsers = await axios.get(postsUrl);
+
+	console.log(resUsers.data, postUsers.data);
+}
+
+main();
