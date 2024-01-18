@@ -68,4 +68,18 @@ function putData() {
 		});
 }
 
-putData();
+function patchData() {
+	axios
+		.put('https://jsonplaceholder.typicode.com/users/1', {
+			name: 'Adam Smith',
+			ussername: 'adamsmith',
+		})
+		.then(res => {
+			console.log(res.data);
+		})
+		.catch(err => {
+			console.log(err);
+		});
+}
+
+patchData();
