@@ -54,4 +54,18 @@ function postUsers() {
 		});
 }
 
-postUsers();
+function putData() {
+	axios
+		.put('https://jsonplaceholder.typicode.com/users/2', {
+			name: 'John Doe',
+			ussername: 'johndoe',
+		})
+		.then(res => {
+			console.log(res.data);
+		})
+		.catch(err => {
+			console.log(err);
+		});
+}
+
+putData();
