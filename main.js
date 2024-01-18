@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-function postUsers() {
+function getUsers() {
 	// axios
 	// 	.get('https://jsonplaceholder.typicode.com/users', {
 	// 		params: {
@@ -14,6 +14,23 @@ function postUsers() {
 	// 		console.log(err);
 	// 	});
 
+	axios({
+		method: 'post',
+		url: 'https://reqres.in/api/register',
+		data: {
+			email: 'eve.holt@reqres.in',
+			password: 'pistol',
+		},
+	})
+		.then(res => {
+			console.log(res.data);
+		})
+		.catch(err => {
+			console.log(err);
+		});
+}
+
+function postUsers() {
 	// axios({
 	// 	method: 'post',
 	// 	url: 'https://reqres.in/api/register',
